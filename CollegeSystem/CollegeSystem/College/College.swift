@@ -2145,4 +2145,98 @@ class College {
     func setSchedules(_ schedules: [Schedule]) {
         self.schedules = schedules
     }
+    func getProgramsOfDepartment(_ id: Int) -> [Program] {
+        var array: [Program] = []
+        for p in programs {
+            if p.getdepartment().getDepartmentId() == id {
+                array.append(p)
+            }
+        }
+        return array
+    }
+    func getCoursesOfProgram(_ id: Int) -> [Course] {
+        var array: [Course] = []
+        for c in courses {
+            if c.getProgram().getProgramId() == id {
+                array.append(c)
+            }
+        }
+        return array
+    }
+    func getClassesOfCourse(_ id: Int) -> [Classe] {
+        var array: [Classe] = []
+        for c in classes {
+            if c.getCourse().getCourseId() == id {
+                array.append(c)
+            }
+        }
+        return array
+    }
+    func getInstructorsOfCourse(_ id: Int) -> [Employee] {
+        var array: [Employee] = []
+        for c in classes {
+            if c.getCourse().getCourseId() == id {
+                array.append(c.getInstructor())
+            }
+        }
+        return array
+    }
+    func getStudentsOfClasse(_ id: Int) -> [Student] {
+        var array: [Student] = []
+        for sc in studentClasses {
+            if sc.getClasse().getClasseId() == id {
+                array.append(sc.getStudent())
+            }
+        }
+        return array
+    }
+    func getSchedulesOfClasse(_ id: Int) -> [Schedule] {
+        var array: [Schedule] = []
+        for s in schedules {
+            if s.getClasse().getClasseId() == id {
+                array.append(s)
+            }
+        }
+        return array
+    }
+    func getSchedulesOfInstructor(_ id: Int) -> [Schedule] {
+        var array: [Schedule] = []
+        for s in schedules {
+            if s.getClasse().getInstructor().getEmployeeId() == id {
+                array.append(s)
+            }
+        }
+        return array
+    }
+    func getSchedulesOfStudent(_ id: Int) -> [Schedule] {
+        var array: [Schedule] = []
+        let studentClassesOfStudent = getStudentClassesOfStudent(id)
+        for s in schedules {
+            for sc in studentClassesOfStudent {
+                if s.getClasse().getClasseId() == sc.getClasse().getClasseId() {
+                    array.append(s)
+                    break
+                }
+            }
+        }
+        return array
+    }
+    func getStudentClassesOfStudent(_ id: Int) -> [StudentClass] {
+        var array: [StudentClass] = []
+        for sc in studentClasses {
+            if sc.getStudent().getStudentId() == id {
+                array.append(sc)
+            }
+        }
+        return array
+    }
+    func getStudentClassesOfInstructor(_ id: Int) -> [StudentClass] {
+        var array: [StudentClass] = []
+        for sc in studentClasses {
+            if sc.getClasse().getInstructor().getEmployeeId() == id {
+                array.append(sc)
+            }
+        }
+        return array
+    }
 }

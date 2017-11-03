@@ -107,6 +107,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print("prepare for segue \(segue.identifier)")
         let destination = segue.destination as! CourseViewController
         destination.course = college.getCourse(1)
+        destination.college = college
     }
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

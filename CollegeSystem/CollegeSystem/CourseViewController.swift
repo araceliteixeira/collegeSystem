@@ -20,6 +20,10 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet weak var txtStudents: UITextField!
     
     var course: Course?
+    var college: College = College()
+    var instructors: [Employee] = []
+    var classes: [Classe] = []
+    var students: [Student] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,7 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             txtId.text = String(existCourse.getCourseId())
             txtCredit.text = String(existCourse.getCreditHour())
             txtHead.text = existCourse.getHead().getName()
+            txtProgram.text = existCourse.getProgram().getName()
         }
     }
 
