@@ -13,16 +13,16 @@ class Student {
     private var studentId: Int
     private var name: String
     private var originCountry: Country
-    private var startDate: NSDate
-    private var endDate: NSDate
+    private var startDate: Date
+    private var endDate: Date
     private var status: Status
     
     init(){
         studentId = 0
         name = ""
         originCountry = Country.India
-        startDate = NSDate()
-        endDate = NSDate()
+        startDate = Date()
+        endDate = Date()
         status = Status.Active
     }
     
@@ -30,8 +30,8 @@ class Student {
         self.studentId = studentId
         self.name = name
         self.originCountry = originCountry
-        self.startDate = Util.convertStringToDate(startDate)
-        self.endDate = Util.convertStringToDate(endDate)
+        self.startDate = Util.convertStringToDate(startDate) ?? Date()
+        self.endDate = Util.convertStringToDate(endDate) ?? Date()
         self.status = status
     }
     
@@ -68,10 +68,10 @@ class Student {
         self.originCountry = originCountry
     }
     func setStartDate(_ startDate: String) {
-        self.startDate = Util.convertStringToDate(startDate)
+        self.startDate = Util.convertStringToDate(startDate) ?? Date()
     }
     func setEndDate(_ endDate: String) {
-        self.endDate = Util.convertStringToDate(endDate)
+        self.endDate = Util.convertStringToDate(endDate) ?? Date()
     }
     func setStatus(_ status:Status) {
         self.status = status

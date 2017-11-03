@@ -13,21 +13,21 @@ class Employee {
     private var employeeId: Int
     private var name : String
     private var mainFunction: Function
-    private var startDate: NSDate
-    private var endDate: NSDate
+    private var startDate: Date
+    private var endDate: Date?
     
     init(){
         employeeId = 0
         name = ""
         mainFunction = Function.Staff
-        startDate = NSDate()
-        endDate = NSDate()
+        startDate = Date()
+        endDate = Date()
     }
     init(_ employeeId: Int, _ name: String, _ mainFunction: Function, _ startDate: String, _ endDate: String) {
         self.employeeId = employeeId
         self.name = name
         self.mainFunction = mainFunction
-        self.startDate = Util.convertStringToDate(startDate)
+        self.startDate = Util.convertStringToDate(startDate) ?? Date()
         self.endDate = Util.convertStringToDate(endDate)
     }
     convenience init(_ employeeId: Int, _ name: String, _ mainFunction: Int, _ startDate: String, _ endDate: String) {
@@ -63,7 +63,7 @@ class Employee {
     }
     
     func setStartDate(_ startDate: String) {
-        self.startDate = Util.convertStringToDate(startDate)
+        self.startDate = Util.convertStringToDate(startDate) ?? Date()
     }
     
     func getEndDate() -> String {
