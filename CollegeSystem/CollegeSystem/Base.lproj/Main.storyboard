@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollegeSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College System" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="80l-JC-6aQ">
+                                <rect key="frame" x="100" y="56" width="175.5" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iu-AN-f1r">
+                                <rect key="frame" x="16" y="435" width="84" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LS5-G1-znm">
+                                <rect key="frame" x="108" y="338" width="251" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlf-Zg-brD">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-7K-rV5">
+                                <rect key="frame" x="16" y="206" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZ9-hX-Q5k">
+                                <rect key="frame" x="108" y="108" width="251" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97554106548958019" green="0.96787711326580061" blue="0.84400806469976652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fZ9-hX-Q5k" firstAttribute="trailing" secondItem="LS5-G1-znm" secondAttribute="trailing" id="7gj-Ly-Q7T"/>
+                            <constraint firstItem="80l-JC-6aQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9hc-yb-QKK"/>
+                            <constraint firstItem="jlf-Zg-brD" firstAttribute="centerX" secondItem="80l-JC-6aQ" secondAttribute="centerX" id="AOH-1S-3q0"/>
+                            <constraint firstAttribute="bottom" secondItem="jlf-Zg-brD" secondAttribute="bottom" constant="20" symbolic="YES" id="Cuf-qv-Qlv"/>
+                            <constraint firstItem="LS5-G1-znm" firstAttribute="top" secondItem="fZ9-hX-Q5k" secondAttribute="bottom" constant="14" id="Fsg-Kf-7Ed"/>
+                            <constraint firstItem="fZ9-hX-Q5k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="92" id="HU6-83-A0J"/>
+                            <constraint firstItem="gM8-7K-rV5" firstAttribute="centerY" secondItem="fZ9-hX-Q5k" secondAttribute="centerY" id="Ibi-3u-g9L"/>
+                            <constraint firstItem="jlf-Zg-brD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LS5-G1-znm" secondAttribute="bottom" constant="60" id="MIx-4c-yZK"/>
+                            <constraint firstItem="fZ9-hX-Q5k" firstAttribute="top" secondItem="80l-JC-6aQ" secondAttribute="bottom" constant="20" id="fcX-we-NUg"/>
+                            <constraint firstItem="gM8-7K-rV5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fyV-sT-LVh"/>
+                            <constraint firstItem="gM8-7K-rV5" firstAttribute="centerY" secondItem="fZ9-hX-Q5k" secondAttribute="centerY" id="knJ-Za-prv"/>
+                            <constraint firstItem="80l-JC-6aQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="n9s-3t-BDH"/>
+                            <constraint firstItem="fZ9-hX-Q5k" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pVn-Nm-5aM"/>
+                            <constraint firstItem="3iu-AN-f1r" firstAttribute="leading" secondItem="gM8-7K-rV5" secondAttribute="leading" id="tDi-NH-W3M"/>
+                            <constraint firstItem="3iu-AN-f1r" firstAttribute="centerY" secondItem="LS5-G1-znm" secondAttribute="centerY" id="thE-X1-TRc"/>
+                            <constraint firstItem="fZ9-hX-Q5k" firstAttribute="leading" secondItem="LS5-G1-znm" secondAttribute="leading" id="tzJ-3R-ejt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerProfile" destination="fZ9-hX-Q5k" id="OR6-o8-GWe"/>
+                        <outlet property="pickerUser" destination="LS5-G1-znm" id="n6O-0a-OlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
