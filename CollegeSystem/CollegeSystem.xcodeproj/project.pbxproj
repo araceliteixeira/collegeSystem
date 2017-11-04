@@ -31,6 +31,16 @@
 		163810991FACBF46007F3F61 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163810881FACBF46007F3F61 /* Schedule.swift */; };
 		1638109A1FACBF46007F3F61 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163810891FACBF46007F3F61 /* College.swift */; };
 		1638109F1FAD08E8007F3F61 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638109E1FAD08E8007F3F61 /* CourseViewController.swift */; };
+		9B4A2C1C1FADB40C0044C046 /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C1B1FADB40C0044C046 /* ProgramViewController.swift */; };
+		9B4A2C1E1FADB4B10044C046 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C1D1FADB4B10044C046 /* DepartmentViewController.swift */; };
+		9B4A2C201FADB4BE0044C046 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C1F1FADB4BE0044C046 /* StudentViewController.swift */; };
+		9B4A2C221FADB4CA0044C046 /* InstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C211FADB4CA0044C046 /* InstructorViewController.swift */; };
+		9B4A2C241FADBADA0044C046 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4A2C231FADBADA0044C046 /* Storyboard.storyboard */; };
+		9B4A2C261FADBED60044C046 /* InstructorClassAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C251FADBED60044C046 /* InstructorClassAverageCell.swift */; };
+		9B4A2C281FADC01F0044C046 /* CountryStudentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C271FADC01F0044C046 /* CountryStudentsCell.swift */; };
+		9B4A2C2A1FADC14D0044C046 /* CoursesAverageGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C291FADC14D0044C046 /* CoursesAverageGradeCell.swift */; };
+		9B4A2C2C1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C2B1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift */; };
+		9B4A2C2E1FADC3C80044C046 /* ProgramStudentAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A2C2D1FADC3C80044C046 /* ProgramStudentAverageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +91,16 @@
 		163810881FACBF46007F3F61 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		163810891FACBF46007F3F61 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		1638109E1FAD08E8007F3F61 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		9B4A2C1B1FADB40C0044C046 /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
+		9B4A2C1D1FADB4B10044C046 /* DepartmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		9B4A2C1F1FADB4BE0044C046 /* StudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		9B4A2C211FADB4CA0044C046 /* InstructorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorViewController.swift; sourceTree = "<group>"; };
+		9B4A2C231FADBADA0044C046 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9B4A2C251FADBED60044C046 /* InstructorClassAverageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorClassAverageCell.swift; sourceTree = "<group>"; };
+		9B4A2C271FADC01F0044C046 /* CountryStudentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryStudentsCell.swift; sourceTree = "<group>"; };
+		9B4A2C291FADC14D0044C046 /* CoursesAverageGradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesAverageGradeCell.swift; sourceTree = "<group>"; };
+		9B4A2C2B1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorWeekdayClassesCell.swift; sourceTree = "<group>"; };
+		9B4A2C2D1FADC3C80044C046 /* ProgramStudentAverageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramStudentAverageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +159,16 @@
 				163810521FACB626007F3F61 /* LaunchScreen.storyboard */,
 				163810551FACB626007F3F61 /* Info.plist */,
 				1638109E1FAD08E8007F3F61 /* CourseViewController.swift */,
+				9B4A2C1B1FADB40C0044C046 /* ProgramViewController.swift */,
+				9B4A2C1D1FADB4B10044C046 /* DepartmentViewController.swift */,
+				9B4A2C1F1FADB4BE0044C046 /* StudentViewController.swift */,
+				9B4A2C211FADB4CA0044C046 /* InstructorViewController.swift */,
+				9B4A2C231FADBADA0044C046 /* Storyboard.storyboard */,
+				9B4A2C2D1FADC3C80044C046 /* ProgramStudentAverageCell.swift */,
+				9B4A2C2B1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift */,
+				9B4A2C291FADC14D0044C046 /* CoursesAverageGradeCell.swift */,
+				9B4A2C271FADC01F0044C046 /* CountryStudentsCell.swift */,
+				9B4A2C251FADBED60044C046 /* InstructorClassAverageCell.swift */,
 			);
 			path = CollegeSystem;
 			sourceTree = "<group>";
@@ -292,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163810541FACB626007F3F61 /* LaunchScreen.storyboard in Resources */,
+				9B4A2C241FADBADA0044C046 /* Storyboard.storyboard in Resources */,
 				163810511FACB626007F3F61 /* Assets.xcassets in Resources */,
 				1638104F1FACB626007F3F61 /* Main.storyboard in Resources */,
 			);
@@ -322,19 +353,28 @@
 				163810901FACBF46007F3F61 /* Util.swift in Sources */,
 				1638108B1FACBF46007F3F61 /* Course.swift in Sources */,
 				1638109A1FACBF46007F3F61 /* College.swift in Sources */,
+				9B4A2C2E1FADC3C80044C046 /* ProgramStudentAverageCell.swift in Sources */,
+				9B4A2C221FADB4CA0044C046 /* InstructorViewController.swift in Sources */,
 				1638104C1FACB626007F3F61 /* ViewController.swift in Sources */,
 				1638108F1FACBF46007F3F61 /* Status.swift in Sources */,
 				163810951FACBF46007F3F61 /* Student.swift in Sources */,
 				163810921FACBF46007F3F61 /* Classe.swift in Sources */,
 				1638104A1FACB626007F3F61 /* AppDelegate.swift in Sources */,
+				9B4A2C261FADBED60044C046 /* InstructorClassAverageCell.swift in Sources */,
 				163810931FACBF46007F3F61 /* DepartmentEmployee.swift in Sources */,
+				9B4A2C201FADB4BE0044C046 /* StudentViewController.swift in Sources */,
 				163810971FACBF46007F3F61 /* CollegeReports.swift in Sources */,
 				163810911FACBF46007F3F61 /* GradeAux.swift in Sources */,
 				1638109F1FAD08E8007F3F61 /* CourseViewController.swift in Sources */,
 				163810981FACBF46007F3F61 /* Function.swift in Sources */,
+				9B4A2C2C1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift in Sources */,
 				163810991FACBF46007F3F61 /* Schedule.swift in Sources */,
+				9B4A2C2A1FADC14D0044C046 /* CoursesAverageGradeCell.swift in Sources */,
 				163810941FACBF46007F3F61 /* Employee.swift in Sources */,
+				9B4A2C281FADC01F0044C046 /* CountryStudentsCell.swift in Sources */,
 				1638108E1FACBF46007F3F61 /* StudentClass.swift in Sources */,
+				9B4A2C1C1FADB40C0044C046 /* ProgramViewController.swift in Sources */,
+				9B4A2C1E1FADB4B10044C046 /* DepartmentViewController.swift in Sources */,
 				1638108D1FACBF46007F3F61 /* Country.swift in Sources */,
 				1638108A1FACBF46007F3F61 /* Department.swift in Sources */,
 			);
@@ -505,11 +545,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGFP7F348Q;
 				INFOPLIST_FILE = CollegeSystem/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ant.CollegeSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -521,11 +561,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGFP7F348Q;
 				INFOPLIST_FILE = CollegeSystem/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ant.CollegeSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

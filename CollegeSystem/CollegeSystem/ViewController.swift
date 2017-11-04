@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var profiles: [String] = ["Student", "Staff", "Instructor", "Department Head", "Program Head", "Course Head"]
     var users: [(Int, String)] = []
+    var selectedUser: (Int, String) = (0, "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +97,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             loadUsers(profiles[row])
             pickerUser.reloadAllComponents()
         } else if pickerView === pickerUser {
-            print(users[row].1)
+            selectedUser = users[row]
         }
     }
 
@@ -104,10 +105,53 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare for segue \(segue.identifier)")
-        let destination = segue.destination as! CourseViewController
-        destination.course = college.getCourse(1)
-        destination.college = college
+        let identifier = segue.identifier ?? ""
+        print("prepare for segue \(identifier)")
+        
+        switch identifier {
+        case "courseDetail":
+            for c in college.getCourses() {
+                if c.getHead().getEmployeeId() == selectedUser.0 {
+                    let destination = segue.destination as! CourseViewController
+                    destination.course = c
+                    destination.college = college
+                }
+            }
+        case "programDetail":
+            for p in college.getPrograms() {
+                if p.getHead().getEmployeeId() == selectedUser.0 {
+                    let destination = segue.destination as! ProgramViewController
+                    destination.program = p
+                    destination.college = college
+                    break
+                }
+            }
+        case "departmentDetail":
+            for d in college.getDepartments() {
+                if d.getHead().getEmployeeId() == selectedUser.0 {
+                    let destination = segue.destination as! DepartmentViewController
+                    destination.department = d
+                    destination.college = college
+                }
+            }
+        case "studentDetail":
+            let destination = segue.destination as! StudentViewController
+            destination.student = college.getStudent(selectedUser.0)
+            destination.college = college
+        case "instructorDetail":
+            let destination = segue.destination as! InstructorViewController
+            destination.instructor = college.getEmployee(selectedUser.0)
+            destination.college = college
+        case "showReports":
+            let destination = segue.destination as! CourseViewController
+            destination.course = college.getCourse(selectedUser.0)
+            destination.college = college
+        default:
+            print("error - identifier not found")
+        }
+        
+        
+        
     }
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

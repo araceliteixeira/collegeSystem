@@ -19,8 +19,8 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet weak var txtClasses: UITextField!
     @IBOutlet weak var txtStudents: UITextField!
     
-    var course: Course?
     var college: College = College()
+    var course: Course?
     var instructors: [Employee] = []
     var classes: [Classe] = []
     var students: [Student] = []
