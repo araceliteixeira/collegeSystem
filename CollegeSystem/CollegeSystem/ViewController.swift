@@ -96,66 +96,78 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pickerView === pickerProfile {
             loadUsers(profiles[row])
             pickerUser.reloadAllComponents()
+            selectedUser = users[0]
         } else if pickerView === pickerUser {
             selectedUser = users[row]
         }
     }
 
     // MARK: - Navigation
-    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identifier = segue.identifier ?? ""
-        print("prepare for segue \(identifier)")
+    }
+    */
+    
+    @IBAction func btnEnter(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let profile = profiles[pickerProfile.selectedRow(inComponent: 0)]
+        print("show screen for profile \(profile)")
         
-        switch identifier {
-        case "courseDetail":
-            for c in college.getCourses() {
-                if c.getHead().getEmployeeId() == selectedUser.0 {
-                    let destination = segue.destination as! CourseViewController
-                    destination.course = c
+        switch profile {
+        case profiles[0]:
+            let navigation = storyBoard.instantiateViewController(withIdentifier: "studentDetailNavigation") as! UINavigationController
+            let destination = navigation.topViewController as! StudentViewController
+            destination.student = college.getStudent(selectedUser.0)
+            destination.college = college
+            self.present(navigation, animated:true, completion:nil)
+        case profiles[1]:
+            let destination = storyBoard.instantiateViewController(withIdentifier: "showReports") as! ReportsPageViewController
+            destination.college = college
+            self.present(destination, animated:true, completion:nil)
+        case profiles[2]:
+            let navigation = storyBoard.instantiateViewController(withIdentifier: "instructorDetailNavigation") as! UINavigationController
+            let destination = navigation.topViewController as! InstructorViewController
+            destination.instructor = college.getEmployee(selectedUser.0)
+            destination.college = college
+            self.present(navigation, animated:true, completion:nil)
+        case profiles[3]:
+            for d in college.getDepartments() {
+                if d.getHead().getEmployeeId() == selectedUser.0 {
+                    let navigation = storyBoard.instantiateViewController(withIdentifier: "departmentDetailNavigation") as! UINavigationController
+                    let destination = navigation.topViewController as! DepartmentViewController
+                    destination.department = d
                     destination.college = college
-                }
-            }
-        case "programDetail":
-            for p in college.getPrograms() {
-                if p.getHead().getEmployeeId() == selectedUser.0 {
-                    let destination = segue.destination as! ProgramViewController
-                    destination.program = p
-                    destination.college = college
+                    self.present(navigation, animated:true, completion:nil)
                     break
                 }
             }
-        case "departmentDetail":
-            for d in college.getDepartments() {
-                if d.getHead().getEmployeeId() == selectedUser.0 {
-                    let destination = segue.destination as! DepartmentViewController
-                    destination.department = d
+        case profiles[4]:
+            for p in college.getPrograms() {
+                if p.getHead().getEmployeeId() == selectedUser.0 {
+                    let navigation = storyBoard.instantiateViewController(withIdentifier: "programDetailNavigation") as! UINavigationController
+                    let destination = navigation.topViewController as! ProgramViewController
+                    destination.program = p
                     destination.college = college
+                    self.present(navigation, animated:true, completion:nil)
+                    break
                 }
             }
-        case "studentDetail":
-            let destination = segue.destination as! StudentViewController
-            destination.student = college.getStudent(selectedUser.0)
-            destination.college = college
-        case "instructorDetail":
-            let destination = segue.destination as! InstructorViewController
-            destination.instructor = college.getEmployee(selectedUser.0)
-            destination.college = college
-        case "showReports":
-            let destination = segue.destination as! CourseViewController
-            destination.course = college.getCourse(selectedUser.0)
-            destination.college = college
+        case profiles[5]:
+            for c in college.getCourses() {
+                if c.getHead().getEmployeeId() == selectedUser.0 {
+                    let navigation = storyBoard.instantiateViewController(withIdentifier: "courseDetailNavigation") as! UINavigationController
+                    let destination = navigation.topViewController as! CourseViewController
+                    destination.course = c
+                    destination.college = college
+                    self.present(navigation, animated:true, completion:nil)
+                    break
+                }
+            }
         default:
             print("error - identifier not found")
         }
         
-        
-        
-    }
-    
-    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        dismiss(animated: true, completion: nil)
     }
 }
 

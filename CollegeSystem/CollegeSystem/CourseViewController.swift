@@ -10,7 +10,6 @@ import UIKit
 
 class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
-    @IBOutlet weak var lblCourse: UILabel!
     @IBOutlet weak var txtId: UITextField!
     @IBOutlet weak var txtCredit: UITextField!
     @IBOutlet weak var txtHead: UITextField!
@@ -35,14 +34,32 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         txtInstructors.delegate = self
         txtClasses.delegate = self
         txtStudents.delegate = self
+        
+        self.txtProgram.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1).cgColor
+        self.txtProgram.layer.borderWidth = 0.5
+        self.txtProgram.layer.cornerRadius = 5
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        label.backgroundColor = UIColor.clear
+        label.numberOfLines = 2
+        label.textAlignment = NSTextAlignment.center
+        navigationItem.titleView = label
 
         // Do any additional setup after loading the view.
         if let existCourse = course {
-            lblCourse.text = existCourse.getName()
+            label.text = existCourse.getName()
             txtId.text = String(existCourse.getCourseId())
             txtCredit.text = String(existCourse.getCreditHour())
             txtHead.text = existCourse.getHead().getName()
             txtProgram.text = existCourse.getProgram().getName()
+            instructors = college.getInstructorsOfCourse(existCourse.getCourseId())
+            txtInstructors.text = String(instructors.count)
+            classes = college.getClassesOfCourse(existCourse.getCourseId())
+            txtClasses.text = String(classes.count)
+            for c in classes {
+                students.append(contentsOf: college.getStudentsOfClasse(c.getClasseId()))
+            }
+            txtStudents.text = String(students.count)
         }
     }
 
@@ -62,4 +79,7 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     */
 
+    @IBAction func btnBack(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -29,15 +29,15 @@ class CollegeReports {
      WHERE sc.grade_project is not null
      GROUP BY e.employee_id, cl.class_id, co.name;
     */
-    func instructorsByClasses() -> String {
-        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Class Id",10) + " | " + Util.pad("Course", 40) + " | Average Grade\n"
+    func instructorsByClassesReport() -> [(String, String, String, String)] {
+        var report: [(String, String, String, String)] = []
         for c in college.getClasses() {
             if getAverageGradeOfClasse(c) != 0 {
                 let instructor = c.getInstructor().getName()
                 let classId = c.getClasseId()
                 let course = c.getCourse().getName()
                 let average = getAverageGradeOfClasse(c)
-                report += Util.pad(instructor, 18) + " | " + Util.pad(classId, 10) + " | " + Util.pad(course, 40) + " | \(average) \n"
+                report.append((instructor, String(classId), course, "\(average)"))
             }
         }
         return report
@@ -70,8 +70,8 @@ class CollegeReports {
      ORDER BY count(s.student_id) DESC;
 
     */
-    func studentsByCountry() -> String {
-        var report = Util.pad("Country", 15) + "| Number of Students\n"
+    func studentsByCountryReport() -> [(String, String)] {
+        var report: [(String, String)] = []
         var countries: [Country] = []
         for s in college.getStudents() {
             if !countries.contains(s.getOriginCountry()) {
@@ -85,7 +85,7 @@ class CollegeReports {
                     count += 1
                 }
             }
-            report += Util.pad(String(describing: c), 15) + "| \(count)\n"
+            report.append((String(describing: c), "\(count)"))
         }
         return report
     }
@@ -102,16 +102,16 @@ class CollegeReports {
      ORDER BY Grade ASC
      LIMIT 3;
     */
-    func coursesByWorstAverage() -> String {
-        var report = Util.pad("Course", 40) + "| Grade\n"
+    func coursesByWorstAverageReport() -> [(String, String)] {
+        var report: [(String, String)] = []
         var elements: [(Course, Int)] = []
         for c in college.getCourses() {
             elements.append((c, getAverageGradeOfClassesInCourse(c)))
         }
         elements = elements.sorted(by: {$0.1 < $1.1})
-        report += Util.pad(elements[0].0.getName(), 40) + "| \(elements[0].1)\n"
-        report += Util.pad(elements[1].0.getName(), 40) + "| \(elements[1].1)\n"
-        report += Util.pad(elements[2].0.getName(), 40) + "| \(elements[2].1)\n"
+        report.append((elements[0].0.getName(), "\(elements[0].1)"))
+        report.append((elements[1].0.getName(), "\(elements[1].1)"))
+        report.append((elements[2].0.getName(), "\(elements[2].1)"))
         return report
     }
     
@@ -145,11 +145,11 @@ class CollegeReports {
      GROUP BY e.employee_id, sd.weekday
      ORDER BY count(cl.class_id);
     */
-    func classesByInscructorsPerWeek() -> String  {
-        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Weekday",12) + " | Number of classes\n"
+    func classesByInscructorsPerWeekReport() -> [(String, String, String)]  {
+        var report: [(String, String, String)] = []
         for i in college.getEmployees() {
             for e in schedulesPerInstructor(i) {
-                report += Util.pad(i.getName(), 18) + " | " + Util.pad(e.0, 12) + " |  \(e.1)\n"
+                report.append((i.getName(), e.0, "\(e.1)"))
             }
         }
         return report
@@ -189,11 +189,11 @@ class CollegeReports {
      ) t
      GROUP BY t.Program;
     */
-    func studentsByBestAverage() -> String {
-        var report = Util.pad("Program", 20) + "| " + Util.pad("Student", 20) + "| Best Average Grade\n"
+    func studentsByBestAverageReport() -> [(String, String, String)] {
+        var report: [(String, String, String)] = []
         for p in college.getPrograms() {
             var elements = getAverageGradeOfEachSudentInProgram(p).sorted(by: {$0.1 > $1.1})
-            report += Util.pad(p.getName(), 20) + "| " + Util.pad(elements[0].0.getName(), 20) + "| \(elements[0].1)\n"
+            report.append((p.getName(), elements[0].0.getName(), "\(elements[0].1)"))
         }
         return report
     }

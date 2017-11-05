@@ -22,6 +22,12 @@ class InstructorViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        label.backgroundColor = UIColor.clear
+        label.numberOfLines = 2
+        label.textAlignment = NSTextAlignment.center
+        navigationItem.titleView = label
     }
     
 
@@ -35,4 +41,7 @@ class InstructorViewController: UIViewController {
     }
     */
 
+    @IBAction func btnBack(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }

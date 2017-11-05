@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1630E59B1FAF73EC00612699 /* ReportsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E59A1FAF73EC00612699 /* ReportsPageViewController.swift */; };
+		1630E59D1FAF762D00612699 /* ProgramStudentAverageTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E59C1FAF762D00612699 /* ProgramStudentAverageTable.swift */; };
+		1630E59F1FAF764900612699 /* InstructorWeekdayClassesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E59E1FAF764900612699 /* InstructorWeekdayClassesTable.swift */; };
+		1630E5A11FAF766200612699 /* CoursesAverageGradeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E5A01FAF766200612699 /* CoursesAverageGradeTable.swift */; };
+		1630E5A31FAF769A00612699 /* CountryStudentsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E5A21FAF769A00612699 /* CountryStudentsTable.swift */; };
+		1630E5A51FAF76E500612699 /* InstructorClassAverageTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E5A41FAF76E500612699 /* InstructorClassAverageTable.swift */; };
 		1638104A1FACB626007F3F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163810491FACB626007F3F61 /* AppDelegate.swift */; };
 		1638104C1FACB626007F3F61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638104B1FACB626007F3F61 /* ViewController.swift */; };
 		1638104F1FACB626007F3F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1638104D1FACB626007F3F61 /* Main.storyboard */; };
@@ -61,6 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1630E59A1FAF73EC00612699 /* ReportsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsPageViewController.swift; sourceTree = "<group>"; };
+		1630E59C1FAF762D00612699 /* ProgramStudentAverageTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramStudentAverageTable.swift; sourceTree = "<group>"; };
+		1630E59E1FAF764900612699 /* InstructorWeekdayClassesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorWeekdayClassesTable.swift; sourceTree = "<group>"; };
+		1630E5A01FAF766200612699 /* CoursesAverageGradeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesAverageGradeTable.swift; sourceTree = "<group>"; };
+		1630E5A21FAF769A00612699 /* CountryStudentsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStudentsTable.swift; sourceTree = "<group>"; };
+		1630E5A41FAF76E500612699 /* InstructorClassAverageTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorClassAverageTable.swift; sourceTree = "<group>"; };
 		163810461FACB626007F3F61 /* CollegeSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163810491FACB626007F3F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1638104B1FACB626007F3F61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +167,7 @@
 				163810491FACB626007F3F61 /* AppDelegate.swift */,
 				1638104B1FACB626007F3F61 /* ViewController.swift */,
 				1638104D1FACB626007F3F61 /* Main.storyboard */,
+				1630E59A1FAF73EC00612699 /* ReportsPageViewController.swift */,
 				163810501FACB626007F3F61 /* Assets.xcassets */,
 				163810521FACB626007F3F61 /* LaunchScreen.storyboard */,
 				163810551FACB626007F3F61 /* Info.plist */,
@@ -165,10 +178,15 @@
 				9B4A2C211FADB4CA0044C046 /* InstructorViewController.swift */,
 				9B4A2C231FADBADA0044C046 /* Storyboard.storyboard */,
 				9B4A2C2D1FADC3C80044C046 /* ProgramStudentAverageCell.swift */,
+				1630E59C1FAF762D00612699 /* ProgramStudentAverageTable.swift */,
 				9B4A2C2B1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift */,
+				1630E59E1FAF764900612699 /* InstructorWeekdayClassesTable.swift */,
 				9B4A2C291FADC14D0044C046 /* CoursesAverageGradeCell.swift */,
+				1630E5A01FAF766200612699 /* CoursesAverageGradeTable.swift */,
 				9B4A2C271FADC01F0044C046 /* CountryStudentsCell.swift */,
+				1630E5A21FAF769A00612699 /* CountryStudentsTable.swift */,
 				9B4A2C251FADBED60044C046 /* InstructorClassAverageCell.swift */,
+				1630E5A41FAF76E500612699 /* InstructorClassAverageTable.swift */,
 			);
 			path = CollegeSystem;
 			sourceTree = "<group>";
@@ -350,7 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1638108C1FACBF46007F3F61 /* Program.swift in Sources */,
+				1630E59F1FAF764900612699 /* InstructorWeekdayClassesTable.swift in Sources */,
 				163810901FACBF46007F3F61 /* Util.swift in Sources */,
+				1630E5A31FAF769A00612699 /* CountryStudentsTable.swift in Sources */,
+				1630E5A11FAF766200612699 /* CoursesAverageGradeTable.swift in Sources */,
 				1638108B1FACBF46007F3F61 /* Course.swift in Sources */,
 				1638109A1FACBF46007F3F61 /* College.swift in Sources */,
 				9B4A2C2E1FADC3C80044C046 /* ProgramStudentAverageCell.swift in Sources */,
@@ -359,17 +380,20 @@
 				1638108F1FACBF46007F3F61 /* Status.swift in Sources */,
 				163810951FACBF46007F3F61 /* Student.swift in Sources */,
 				163810921FACBF46007F3F61 /* Classe.swift in Sources */,
+				1630E59D1FAF762D00612699 /* ProgramStudentAverageTable.swift in Sources */,
 				1638104A1FACB626007F3F61 /* AppDelegate.swift in Sources */,
 				9B4A2C261FADBED60044C046 /* InstructorClassAverageCell.swift in Sources */,
 				163810931FACBF46007F3F61 /* DepartmentEmployee.swift in Sources */,
 				9B4A2C201FADB4BE0044C046 /* StudentViewController.swift in Sources */,
 				163810971FACBF46007F3F61 /* CollegeReports.swift in Sources */,
+				1630E59B1FAF73EC00612699 /* ReportsPageViewController.swift in Sources */,
 				163810911FACBF46007F3F61 /* GradeAux.swift in Sources */,
 				1638109F1FAD08E8007F3F61 /* CourseViewController.swift in Sources */,
 				163810981FACBF46007F3F61 /* Function.swift in Sources */,
 				9B4A2C2C1FADC28B0044C046 /* InstructorWeekdayClassesCell.swift in Sources */,
 				163810991FACBF46007F3F61 /* Schedule.swift in Sources */,
 				9B4A2C2A1FADC14D0044C046 /* CoursesAverageGradeCell.swift in Sources */,
+				1630E5A51FAF76E500612699 /* InstructorClassAverageTable.swift in Sources */,
 				163810941FACBF46007F3F61 /* Employee.swift in Sources */,
 				9B4A2C281FADC01F0044C046 /* CountryStudentsCell.swift in Sources */,
 				1638108E1FACBF46007F3F61 /* StudentClass.swift in Sources */,
@@ -549,7 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ant.CollegeSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -565,7 +589,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ant.CollegeSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
