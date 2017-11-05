@@ -47,10 +47,10 @@ class Program {
     func setHead(_ head: Employee) {
         self.head = head
     }
-    func getdepartment() -> Department {
+    func getDepartment() -> Department {
         return department
     }
-    func setdepartment(_ department: Department) {
+    func setDepartment(_ department: Department) {
         self.department = department
     }
 }

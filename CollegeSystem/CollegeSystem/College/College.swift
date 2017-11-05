@@ -51,23 +51,23 @@ class College {
         employees.append(Employee(5, "Elijah Stancill", 3, "2015-08-01", ""))
         employees.append(Employee(6, "Tracey Dunne", 3, "2015-08-01", ""))
         employees.append(Employee(7, "Hilton Stanwood", 2, "2015-08-01", ""))
-        employees.append(Employee(8, "Arturo Manzanares", 2, "2015-08-01", ""))
+        employees.append(Employee(8, "Arturo Manzanares", 3, "2015-08-01", ""))
         employees.append(Employee(9, "Charles Boise", 2, "2015-08-01", ""))
         employees.append(Employee(10, "Lucio Dabney", 3, "2015-08-01", ""))
         employees.append(Employee(11, "Jeremy Orourke", 2, "2015-08-01", ""))
-        employees.append(Employee(12, "Kenneth Backes", 2, "2015-08-01", ""))
+        employees.append(Employee(12, "Kenneth Backes", 3, "2015-08-01", ""))
         employees.append(Employee(13, "Byron Stolp", 2, "2015-08-01", ""))
         employees.append(Employee(14, "Moshe Terrell", 3, "2015-08-01", ""))
         employees.append(Employee(15, "Rodney Saxton", 2, "2015-08-01", ""))
-        employees.append(Employee(16, "Timothy Blade", 2, "2015-08-01", ""))
+        employees.append(Employee(16, "Timothy Blade", 3, "2015-08-01", ""))
         employees.append(Employee(17, "Calvin Mcgee", 2, "2015-08-01", ""))
         employees.append(Employee(18, "Emmitt Damato", 3, "2015-08-01", ""))
         employees.append(Employee(19, "Kevin Tellis", 2, "2015-08-01", ""))
-        employees.append(Employee(20, "Rene Cornman", 2, "2015-08-01", ""))
+        employees.append(Employee(20, "Rene Cornman", 3, "2015-08-01", ""))
         employees.append(Employee(21, "Jorge Thrush", 2, "2015-08-01", ""))
         employees.append(Employee(22, "Chong Batty", 3, "2015-08-01", ""))
         employees.append(Employee(23, "Mitchell Shaikh", 2, "2015-08-01", ""))
-        employees.append(Employee(24, "George Batson", 2, "2015-08-01", ""))
+        employees.append(Employee(24, "George Batson", 3, "2015-08-01", ""))
         employees.append(Employee(25, "Jamaal Silverstein", 2, "2015-08-01", ""))
         employees.append(Employee(26, "Toney Gurley", 1, "2015-08-01", ""))
         employees.append(Employee(27, "Jefferey Nebeker", 1, "2015-08-01", ""))
@@ -76,23 +76,23 @@ class College {
         employees.append(Employee(30, "Chance Penfield", 3, "2015-08-01", ""))
         employees.append(Employee(31, "Willa Kasel", 3, "2015-08-01", ""))
         employees.append(Employee(32, "Dalila Olmstead", 2, "2015-08-01", ""))
-        employees.append(Employee(33, "Leesa Dietrick", 2, "2015-08-01", ""))
+        employees.append(Employee(33, "Leesa Dietrick", 3, "2015-08-01", ""))
         employees.append(Employee(34, "Dalene Axford", 2, "2015-08-01", ""))
         employees.append(Employee(35, "Neta Barker", 3, "2015-08-01", ""))
         employees.append(Employee(36, "Georgina Holmon", 2, "2015-08-01", ""))
-        employees.append(Employee(37, "Jamika Benton", 2, "2015-08-01", ""))
+        employees.append(Employee(37, "Jamika Benton", 3, "2015-08-01", ""))
         employees.append(Employee(38, "Dorothy Berber", 2, "2015-08-01", ""))
         employees.append(Employee(39, "Verda Bengston", 3, "2015-08-01", ""))
         employees.append(Employee(40, "Penney Dix", 2, "2015-08-01", ""))
-        employees.append(Employee(41, "Brigida Lagace", 2, "2015-08-01", ""))
+        employees.append(Employee(41, "Brigida Lagace", 3, "2015-08-01", ""))
         employees.append(Employee(42, "Sunni Corson", 2, "2015-08-01", ""))
         employees.append(Employee(43, "Veola Erben", 3, "2015-08-01", ""))
         employees.append(Employee(44, "Christa Galyean", 2, "2015-08-01", ""))
-        employees.append(Employee(45, "Noella Hites", 2, "2015-08-01", ""))
+        employees.append(Employee(45, "Noella Hites", 3, "2015-08-01", ""))
         employees.append(Employee(46, "Fumiko Shell", 2, "2015-08-01", ""))
         employees.append(Employee(47, "Renda Centeno", 3, "2015-08-01", ""))
         employees.append(Employee(48, "Regina Mccallon", 2, "2015-08-01", ""))
-        employees.append(Employee(49, "Laurene Membreno", 2, "2015-08-01", ""))
+        employees.append(Employee(49, "Laurene Membreno", 3, "2015-08-01", ""))
         employees.append(Employee(50, "Meaghan Switzer", 2, "2015-08-01", ""))
     }
     
@@ -2145,10 +2145,18 @@ class College {
     func setSchedules(_ schedules: [Schedule]) {
         self.schedules = schedules
     }
+    func getDepartmentOfEmployee(_ id: Int) -> Department {
+        for de in departmentEmployees {
+            if de.getEmployee().getEmployeeId() == id {
+                return de.getDepartment()
+            }
+        }
+        return Department()
+    }
     func getProgramsOfDepartment(_ id: Int) -> [Program] {
         var array: [Program] = []
         for p in programs {
-            if p.getdepartment().getDepartmentId() == id {
+            if p.getDepartment().getDepartmentId() == id {
                 array.append(p)
             }
         }

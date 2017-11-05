@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         case "Instructor":
             for e in college.getEmployees() {
-                if e.getMainFunction() == Function.Instructor  && e.getEndDate().isEmpty {
+                if (e.getMainFunction() == Function.Instructor || e.getMainFunction() == Function.Head)  && e.getEndDate().isEmpty {
                     users.append((e.getEmployeeId(), e.getName()))
                 }
             }

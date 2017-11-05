@@ -10,19 +10,40 @@ import UIKit
 
 class ProgramViewController: UIViewController {
 
+    @IBOutlet weak var txtId: UITextField!
+    @IBOutlet weak var txtDepartment: UITextField!
+    @IBOutlet weak var txtHead: UITextField!
+    @IBOutlet weak var txtCourses: UITextField!
+    @IBOutlet weak var txtStudents: UITextField!
+    
     var college = College()
     var program: Program?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         label.backgroundColor = UIColor.clear
         label.numberOfLines = 2
         label.textAlignment = NSTextAlignment.center
         navigationItem.titleView = label
+        
+        if let existProgram = program {
+            label.text = existProgram.getName()
+            txtId.text = String(existProgram.getProgramId())
+            txtDepartment.text = existProgram.getDepartment().getName()
+            txtHead.text = existProgram.getHead().getName()
+            let courses = college.getCoursesOfProgram(existProgram.getProgramId())
+            txtCourses.text = String(courses.count)
+            var students = 0
+            for c in courses {
+                let classes = college.getClassesOfCourse(c.getCourseId())
+                for cl in classes {
+                    students += college.getStudentsOfClasse(cl.getClasseId()).count
+                }
+            }
+            txtStudents.text = "\(students)"
+        }
     }
 
     override func didReceiveMemoryWarning() {

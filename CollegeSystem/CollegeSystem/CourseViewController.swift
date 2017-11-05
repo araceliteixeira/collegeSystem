@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class CourseViewController: UIViewController {
 
     @IBOutlet weak var txtId: UITextField!
     @IBOutlet weak var txtCredit: UITextField!
@@ -27,14 +27,6 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        txtId.delegate = self
-        txtCredit.delegate = self
-        txtHead.delegate = self
-        txtProgram.delegate = self
-        txtInstructors.delegate = self
-        txtClasses.delegate = self
-        txtStudents.delegate = self
-        
         self.txtProgram.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1).cgColor
         self.txtProgram.layer.borderWidth = 0.5
         self.txtProgram.layer.cornerRadius = 5
@@ -45,7 +37,6 @@ class CourseViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         label.textAlignment = NSTextAlignment.center
         navigationItem.titleView = label
 
-        // Do any additional setup after loading the view.
         if let existCourse = course {
             label.text = existCourse.getName()
             txtId.text = String(existCourse.getCourseId())
