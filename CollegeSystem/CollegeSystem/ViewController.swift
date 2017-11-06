@@ -96,6 +96,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pickerView === pickerProfile {
             loadUsers(profiles[row])
             pickerUser.reloadAllComponents()
+            pickerUser.selectRow(0, inComponent: 0, animated: true)
             selectedUser = users[0]
         } else if pickerView === pickerUser {
             selectedUser = users[row]
@@ -109,10 +110,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     */
     
-    @IBAction func btnEnter(_ sender: UIButton) {
+    @IBAction func btnEnter(_ sender: UIBarButtonItem) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let profile = profiles[pickerProfile.selectedRow(inComponent: 0)]
-        print("show screen for profile \(profile)")
         
         switch profile {
         case profiles[0]:

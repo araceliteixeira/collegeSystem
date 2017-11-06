@@ -49,39 +49,33 @@ class ReportsPageViewController: UIPageViewController, UIPageViewControllerDataS
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
-        
-        let previousIndex = viewControllerIndex - 1
-        
-        guard previousIndex >= 0 else {
+        index = viewControllerIndex - 1
+        guard index >= 0 else {
+            index = orderedViewControllers.count - 1
+            return orderedViewControllers.last
+        }
+        guard orderedViewControllers.count > index else {
             return nil
         }
-        
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
-        }
-        
-        return orderedViewControllers[previousIndex]
+        return orderedViewControllers[index]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
-        
-        let nextIndex = viewControllerIndex + 1
+        index = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
-        
-        guard orderedViewControllersCount != nextIndex else {
+        guard orderedViewControllersCount != index else {
+            index = 0
+            return orderedViewControllers.first
+        }
+        guard orderedViewControllersCount > index else {
             return nil
         }
-        
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-        
-        return orderedViewControllers[nextIndex]
+        return orderedViewControllers[index]
     }
-
+    
     /*
     // MARK: - Navigation
 
