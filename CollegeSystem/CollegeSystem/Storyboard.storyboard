@@ -108,6 +108,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="X4N-kS-RWa"/>
                         <barButtonItem title="Back" id="cW2-Pb-7bO">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="btnBack:" destination="T0c-1X-aKJ" id="B2S-EC-AH2"/>
                             </connections>
@@ -182,6 +183,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cz3-Hk-3AU"/>
                         <barButtonItem title="Back" id="lRW-T4-0sr">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="btnBack:" destination="iFF-gT-YJ7" id="rX6-sS-diz"/>
                             </connections>
@@ -256,6 +258,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="pIk-S4-z4f"/>
                         <barButtonItem title="Back" id="lpp-yo-iBO">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="btnBack:" destination="96S-5q-v6U" id="CXk-se-fG3"/>
                             </connections>
@@ -368,6 +371,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4vO-wu-EJ5"/>
                         <barButtonItem title="Back" id="VOh-rg-ZZa">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="btnBack:" destination="wg5-Wt-bMD" id="qMf-iM-6N6"/>
                             </connections>
@@ -479,6 +483,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="UyW-kh-LZW"/>
                         <barButtonItem title="Back" id="kPH-Ur-oDy">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="btnBack:" destination="9wX-r2-XgZ" id="Xde-29-4ld"/>
                             </connections>
